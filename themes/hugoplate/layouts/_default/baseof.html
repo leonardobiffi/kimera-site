@@ -10,17 +10,16 @@
     <!-- head (don't cache it) -->
     {{ partial "essentials/head.html" . }}
 
-
     <!-- style (always cache it) -->
     {{ partialCached "essentials/style.html" . }}
-  </head>
-
-  <body>
+    
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    
+  </head>
+
+  <body>
     <!-- cache partial only in production -->
     {{ if hugo.IsProduction }}
       {{ partialCached "preloader.html" . }}
